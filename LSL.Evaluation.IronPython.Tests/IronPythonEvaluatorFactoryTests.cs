@@ -17,6 +17,7 @@ public class IronPythonEvaluatorFactoryTests
                 c.Configure(s => s
                     .ConfigureEngine(e =>
                     {
+                        e.Engine.Execute("value3 = 1", e.Scope);
                         e.Scope.SetVariable("by2", (int i) => i * 2);
                         e.Scope.SetVariable("value2", 24);
                     })
@@ -32,10 +33,10 @@ public class IronPythonEvaluatorFactoryTests
             """
             from System import Math
 
-            by2(12) + value1 + value2 + Math.Sqrt(144)
+            by2(12) + value1 + value2 + value3 + Math.Sqrt(144)
             """);
 
         // Assert
-        result.Should().BeEquivalentTo(72);
+        result.Should().BeEquivalentTo(73);
     }
 }
