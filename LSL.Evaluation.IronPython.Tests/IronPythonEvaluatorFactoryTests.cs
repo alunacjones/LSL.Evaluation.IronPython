@@ -13,12 +13,12 @@ public class IronPythonEvaluatorFactoryTests
             .Build(c =>
             {
                 c.AddCode("value1 = 12");
-                //c.AddCode("value2 = 24");
+                c.SetValue("by2", (int i) => i * 2);
+                
                 c.Configure(s => s
                     .ConfigureEngine(e =>
                     {
                         e.Engine.Execute("value3 = 1", e.Scope);
-                        e.Scope.SetVariable("by2", (int i) => i * 2);
                         e.Scope.SetVariable("value2", 24);
                     })
                     .ConfigureOptions(e =>

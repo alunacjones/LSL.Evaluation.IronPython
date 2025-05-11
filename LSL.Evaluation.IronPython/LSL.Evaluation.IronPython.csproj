@@ -29,7 +29,7 @@
 
   <ItemGroup>
     <PackageReference Include="IronPython" Version="3.4.2" />
-    <PackageReference Include="LSL.Evaluation.Core" Version="1.0.1" />
+    <PackageReference Include="LSL.Evaluation.Core" Version="1.0.4" />
   </ItemGroup>
 
   <ItemGroup>

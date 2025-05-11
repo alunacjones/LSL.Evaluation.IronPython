@@ -33,6 +33,7 @@ public class IronPythonEvaluatorFactory : IEvaluatorFactoryWithSettings<IronPyth
 
         Configure(ironPythonSettings.EngineConfigurators, new IronPythonEngineContainer { Engine = engine, Scope = scope });
         Configure(config.CodeToAdd.Select(c => (Action<ScriptEngine>)(e => e.Execute(c, scope))), engine);
+        Configure(config.ValuesToSet.Select(c => (Action<ScriptScope>)(e => e.SetVariable(c.Name, c.Value))), scope);
         
         return new IronPythonEvaluator(engine, scope);
     }
