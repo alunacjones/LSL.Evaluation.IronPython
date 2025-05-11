@@ -40,7 +40,6 @@ public class IronPythonEvaluatorFactory : IEvaluatorFactoryWithSettings<IronPyth
 
     private class IronPythonEvaluator(ScriptEngine engine, ScriptScope scope) : IEvaluator
     {
-
         public object Evaluate(string expression) => engine.Execute(expression, scope);
     }
 }
