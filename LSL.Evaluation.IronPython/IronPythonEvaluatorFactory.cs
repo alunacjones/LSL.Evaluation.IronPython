@@ -38,17 +38,9 @@ public class IronPythonEvaluatorFactory : IEvaluatorFactoryWithSettings<IronPyth
         return new IronPythonEvaluator(engine, scope);
     }
 
-    private class IronPythonEvaluator : IEvaluator
+    private class IronPythonEvaluator(ScriptEngine engine, ScriptScope scope) : IEvaluator
     {
-        private readonly ScriptEngine _engine;
-        private readonly ScriptScope _scope;
 
-        public IronPythonEvaluator(ScriptEngine engine, ScriptScope scope)
-        {
-            _engine = engine;
-            _scope = scope;
-        }
-
-        public object Evaluate(string expression) => _engine.Execute(expression, _scope);
+        public object Evaluate(string expression) => engine.Execute(expression, scope);
     }
 }
