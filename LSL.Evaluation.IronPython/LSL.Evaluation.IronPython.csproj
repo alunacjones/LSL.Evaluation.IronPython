@@ -21,6 +21,7 @@
     <RepositoryUrl>https://github.com/alunacjones/LSL.Evaluation.IronPython</RepositoryUrl>
     <Authors>alunacjones</Authors>
     <LangVersion>12</LangVersion>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -34,5 +35,9 @@
 
   <ItemGroup>
     <None Include="..\readme.md" Pack="true" PackagePath=""/>
-  </ItemGroup>   
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\assets\icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
 </Project>
